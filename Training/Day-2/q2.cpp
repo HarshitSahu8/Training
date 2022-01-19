@@ -63,8 +63,8 @@ void AllTriplet(int arr[], int n, int sum)
 }
 int main()
 {
-	int arr[] = {12, 3, 4, 6, 1};
-	int sum = 22;
+	int arr[] = {0,1,2,3,4,5,6,7,8,9,10};
+	int sum = 12;
 	int n = sizeof(arr) / sizeof(arr[0]);
 	AllTriplet(arr, n, sum);
 	return 0;

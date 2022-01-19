@@ -79,28 +79,28 @@ def queen(King, Queen,size):
 
 
 
-def isKingSafe(chess):
-    King = [0]*2
-    Horse = [0]*2
-    Camel = [0]*2
-    Queen = [0]*2
-    Elephant = [0]*2
-    size = len(chess)
+def isKingSafe(chessBoard):
+    King = [0,0]
+    Horse = [0,0]
+    Camel = [0,0]
+    Queen = [0,0]
+    Elephant = [0,0]
+    size = len(chessBoard)
     for i in range(size):
         for j in range(size):
-            if chess[i][j] == 'K':
+            if chessBoard[i][j] == 'K':
                 King[0] = i
                 King[1] = j
-            elif chess[i][j] == 'H':
+            elif chessBoard[i][j] == 'H':
                 Horse[0] = i
                 Horse[1] = j
-            elif chess[i][j] == 'C':
+            elif chessBoard[i][j] == 'C':
                 Camel[0] = i
                 Camel[1] = j
-            elif chess[i][j] == 'Q':
+            elif chessBoard[i][j] == 'Q':
                 Queen[0] = i
                 Queen[1] = j
-            elif chess[i][j] == 'E':
+            elif chessBoard[i][j] == 'E':
                 Elephant[0] = i
                 Elephant[1] = j
 
