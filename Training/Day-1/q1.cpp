@@ -22,19 +22,14 @@ bool isNameValid(string s, int n)
         }
     }
     int flag=0;
-    int *array = new int[n];//n size
     for(int i=0;i<n;i++){
         if(s[i]=='S'){
-            for(int j=i;j<n;j++){
-                if(s[j]=='T'){
-                    flag=1;
-                }
-                else if(s[j]=='S' && flag==1){
-                    return false;                   
-                }    
-            }
+            flag+=1;
         }
-    }
+        else if(s[i]=='T' and flag%2!=0){
+            return false;
+        }
+        }
     return true;
 }
 
