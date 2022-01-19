@@ -8,28 +8,34 @@ using namespace std;
 
 bool isNameValid(string s, int n)
 {
-    char vowel[]={'A','E','I','O','U'};
+    char vowel[] = {'A', 'E', 'I', 'O', 'U'};
     int freq[] = {0, 0, 0, 0, 0};
     for (int i = 0; i < n; i++)
     {
-        for(int j=0;j<5;j++){
-            if(vowel[j]==s[i]){
-                freq[j]+=1;
-                if (freq[j]>=2){
+        for (int j = 0; j < 5; j++)
+        {
+            if (vowel[j] == s[i])
+            {
+                freq[j] += 1;
+                if (freq[j] >= 2)
+                {
                     return false;
                 }
             }
         }
     }
-    int flag=0;
-    for(int i=0;i<n;i++){
-        if(s[i]=='S'){
-            flag+=1;
+    int flag = 0;
+    for (int i = 0; i < n; i++)
+    {
+        if (s[i] == 'S')
+        {
+            flag += 1;
         }
-        else if(s[i]=='T' and flag%2!=0){
+        else if (s[i] == 'T' and flag % 2 != 0)
+        {
             return false;
         }
-        }
+    }
     return true;
 }
 
@@ -38,15 +44,18 @@ int main()
     string s;
     cin >> s;
     int n = s.length();
-    for(int i=0;i<n;i++){
-        s[i]-=32;
+    for (int i = 0; i < n; i++)
+    {
+        s[i] -= 32;
     }
     // cout<<s;
     bool res = isNameValid(s, n);
-    if(res){
-        cout<<"true";
+    if (res)
+    {
+        cout << "true";
     }
-    else{
-        cout<<"false";
+    else
+    {
+        cout << "false";
     }
 }
