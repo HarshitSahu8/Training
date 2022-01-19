@@ -68,6 +68,7 @@ def camel(King, Camel,size):
 def elephant(King, Elephant):
     if King[0]==Elephant[0] or King[1]==Elephant[1]:
         return True
+    return False
 
 def queen(King, Queen,size):
     if camel(King,Queen,size):
@@ -114,7 +115,7 @@ def isKingSafe(chess):
     return True
 
 
-board = [['.', '.', '.', '.', '.', '.', '.', '.'],
+board = [['.', '.', '.', '.', 'E', '.', '.', '.'],
          ['.', '.', '.', '.', '.', '.', '.', '.'],
          ['.', '.', '.', '.', '.', '.', '.', '.'],
          ['.', '.', '.', 'K', '.', '.', '.', '.'],
