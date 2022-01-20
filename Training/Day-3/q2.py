@@ -34,6 +34,7 @@ def horse(King, Horse):
 
 
 def camel(King, Camel,size):
+    #cordinate(i,j)
     i=Camel[0]
     j=Camel[1]
     while((i>=0 and j>=0) and(i>size and j>size)):
