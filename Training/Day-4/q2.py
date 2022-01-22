@@ -23,22 +23,20 @@ def lg(s):
         if s[start] not in unique:
             temp+=s[start]
             unique[s[start]]=1
-            start+=1
-        else:
-            if temp not in sets:
-                sets.append(temp)
-                temp=''
-                unique.clear()
+        elif s[start] in unique:
+            sets.append(temp)
+            # print(sets)
+            temp=''
+            unique.clear()
         start+=1
-    set_leng=len(sets)
-    l=[0]*set_leng
-    for i in range(set_leng):
+    l=[0]*len(sets)
+    for i in range(len(sets)):
         l[i]=len(sets[i])
-    #find max
-    maximum=0
-    for i in range(set_leng):
-        if maximum<l[i]:
-            maximum=l[i]
-    print(maximum)
+    maxi=0
+    for i in range(len(l)):
+        if maxi<l[i]:
+            maxi=l[i]
+    print(maxi)
+    
 
-lg()
+lg('abcaarefabcd')

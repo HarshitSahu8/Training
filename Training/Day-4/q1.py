@@ -23,6 +23,8 @@ Input: s = "hello"
 Output: "holle"
 )
 '''
+
+
 class StringUtils():
     def countChar(self, string, char):
         count = 0
@@ -60,24 +62,70 @@ class StringUtils():
             print(l[i])
         return
 
-    def hasPattern(self, string, pattern):
-        leng = len(string)
-        len_pat = len(pattern)
-        if len_pat > leng:
-            print("pattern grater than given string")
-            return
-        sptr = 0
-        pptr = 0
-        while(sptr < leng):
-            if string[sptr] == pattern[pptr]:
-                pptr += 1
-            if pptr == len_pat-1:
-                return True
-            sptr += 1
-        if pptr == len_pat-1:
-            return True
-        else:
-            return False
+    # def hasPattern(self, string, pattern):
+    #     leng = len(string)
+    #     len_pat = len(pattern)
+    #     if len_pat > leng:
+    #         print("pattern grater than given string")
+    #         return
+    #     sptr = 0
+    #     pptr = 0
+    #     while(sptr < leng):#KMP
+    #         if string[sptr] == pattern[pptr]:
+    #             pptr += 1
+    #         elif pptr == len_pat-1:
+    #             return True
+    #         elif string[sptr]!=pattern[pptr]:
+    #             pptr=0
+    #         sptr += 1
+
+        # if pptr == len_pat-1:
+        #     return True
+        # else:
+        #     return False
+
+    def hasPattern(self,string, pattern):
+        string_length = len(string)
+        pattern_length = len(pattern)
+        lps = [0]*pattern_length
+        j = 0
+        self.compute_Lps_array(pattern, pattern_length, lps)
+
+        i = 0
+        while i < string_length:
+            if pattern[j] == string[i]:
+                i += 1
+                j += 1
+
+            if j == pattern_length:
+                print("pattern matched")
+                print("index: " + str(i-j))
+                j = lps[j-1]
+
+            elif i < string_length and pattern[j] != string[i]:
+                if j != 0:
+                    j = lps[j-1]
+                else:
+                    i += 1
+
+
+    def compute_Lps_array(self,pattern, string_length, lps):
+        leng = 0
+        lps[0]
+        i = 1
+
+        while i < string_length:
+            if pattern[i] == pattern[leng]:
+                leng += 1
+                lps[i] = leng
+                i += 1
+            else:
+                if leng != 0:
+                    leng = lps[len-1]
+
+                else:
+                    lps[i] = 0
+                    i += 1
 
     def AllWordsContainsChar(self, string, ch):
         leng = len(string)
@@ -111,39 +159,43 @@ class StringUtils():
             start += 1
             end -= 1
         print(string)
-    def reverseVowels(self,string):
-        vowels={'a','e','i','o','u'}
-        leng=len(string)
-        l=['']*leng
+
+    def reverseVowels(self, string):
+        vowels = {'a', 'e', 'i', 'o', 'u'}
+        leng = len(string)
+        l = ['']*leng
         for i in range(leng):
-            l[i]=string[i]
-        start=0
-        end=leng-1
-        while(start<end):
+            l[i] = string[i]
+        start = 0
+        end = leng-1
+        while(start < end):
             if l[start] in vowels and l[end] in vowels:
-                l[start],l[end]=l[end],l[start]
-                end-=1
-                start+=1
+                l[start], l[end] = l[end], l[start]
+                end -= 1
+                start += 1
             elif l[start] in vowels and l[end] not in vowels:
-                end-=1
+                end -= 1
             elif l[end] in vowels and l[start] not in vowels:
-                start+=1
+                start += 1
             else:
-                end-=1
-                start+=1
-        temp=''
+                end -= 1
+                start += 1
+        temp = ''
         for i in range(len(l)):
-            temp+=l[i]
+            temp += l[i]
         print(temp)
-    
+
+
 obj = StringUtils()
-inp = 'leopcici'
+inp = 'abcabcaa'
 tar = 'i'
 # print(obj.countChar(inp,tar))
 # obj.substring('abcdef',1,4)
 # obj.splitByChar(inp,'i')
-# print(obj.hasPattern(inp,'eop'))
+obj.hasPattern(inp,'cab')
 # res=obj.AllWordsContainsChar('This Tac ackics','T')
 # print(res)
 # obj.reverse('string')
 # obj.reverseVowels(inp)
+
+# KMP("abcabcaa", "cab")
