@@ -1,15 +1,3 @@
-# def clockwise(arr,size):
-#     res=[]
-#     mainMat=[[0 for i in range(size)] for j in range(size)]
-#     print(mainMat)
-def rotateMatrix(mat):
-    for x in range(0, int(N / 2)):
-        for y in range(x, N-x-1):
-            temp = mat[x][y]
-            mat[x][y] = mat[y][N-1-x]
-            mat[y][N-1-x] = mat[N-1-x][N-1-y]
-            mat[N-1-x][N-1-y] = mat[N-1-y][x]
-            mat[N-1-y][x] = temp
 '''
 Prints array elements clock wise and anti-clockwise alternatively.
 Input : 
@@ -20,6 +8,15 @@ Output :
 1 2 3 6 9 8 7 4 5
 3 2 1 4 7 8 9 6 5
 '''
+def rotateMatrix(mat):
+    for x in range(0, int(N / 2)):
+        for y in range(x, N-x-1):
+            temp = mat[x][y]
+            mat[x][y] = mat[y][N-1-x]
+            mat[y][N-1-x] = mat[N-1-x][N-1-y]
+            mat[N-1-x][N-1-y] = mat[N-1-y][x]
+            mat[N-1-y][x] = temp
+
 def clockwise(matrix,eri,eci): #eri-ending row index eci-ending column index
     sri = 0
     sci = 0
