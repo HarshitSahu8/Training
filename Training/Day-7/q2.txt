@@ -1,0 +1,42 @@
+{% comment %} '''
+Question 2: Convert these classes into JSON parse
+
+public class Employee
+{    
+    String name;  
+    int salary;  
+    Boolean married;
+    String grade = null;
+    Address address;
+    List<String> mobileNumbers;
+    Map<String,Object> Address;
+}
+
+public class Address
+{
+ String primaryAddress;
+ String secondaryAddress;
+ String country;
+ String state;
+}
+''' {% endcomment %}
+{% comment %} ----------------------Answer----------------------- {% endcomment %}
+{
+    "Employee":{
+        "name":"    ",
+        "salary":20000,
+        "married":false,
+        "grade":null,
+        "Address":{
+            "primaryAddress":"    ",
+            "secondaryAddress": "    ",
+            "country":"    ",
+            "state":"     "
+        },
+        "mobileNumbers":[9807544321,9803655741],
+        "address":{
+            " ":{  },
+            "  ":{  }
+        }
+    }    
+}

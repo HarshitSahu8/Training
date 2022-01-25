@@ -1,0 +1,40 @@
+{% comment %} Question 3: Convert the JSON into class
+
+{
+   "firstName":"John",
+   "lastName":"Smith",
+   "age":25,
+   "address":{
+      "streetAddress":"21 2nd Street",
+      "city":"New York",
+      "state":"NY",
+      "postalCode":10021
+   },
+   "phoneNumbers":[
+      {
+         "type":"home",
+         "number":"212 555-1234"
+      },
+      {
+         "type":"fax",
+         "number":"646 555-4567"
+      }
+   ]
+} {% endcomment %}
+
+public class Employee
+{
+    string firstName = "John";
+    string lastName = "Smith";
+    int age = 25;
+    Address address;
+    List<Map<String,String>> phoneNumbers;
+}
+
+public class Address
+{
+    string streetAddress = "21 2nd Street";
+    string city = "New York";
+    string state = "NY";
+    int postalCode = 10021;
+}
