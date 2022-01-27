@@ -31,4 +31,7 @@ class NonSolarInverter(Inverter):
     def getRating(self):
         return Inverter.powerRating(self,self.current,self.voltage) 
 
+obj=NonSolarInverter(250,82)
+print(obj.getRating())
+
     
