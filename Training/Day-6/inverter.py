@@ -15,7 +15,7 @@ class SolarInverter(Inverter):
         self.panels=panels
 
 
-    def rating():
+    def rating(self):
         return super().powerRating(self.current,self.voltage)
     
     def hasBattery(self,battery):
