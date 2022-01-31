@@ -1,9 +1,9 @@
-def strings(list):
+def strings(list):#string concatinate
     temp=''
     for i in range(len(list)):
         temp+=list[i]
     return temp
-def printallagain(string1,string2,string,ptr1,ptr2,i):
+def printallagain(string1,string2,string,ptr1,ptr2,i):#printAllAgain
     if ptr2==0 and ptr1==0:
         print(strings(string))
     if ptr1!=0:
