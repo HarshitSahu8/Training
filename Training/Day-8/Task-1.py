@@ -12,6 +12,7 @@ class Brick:
         self.color
         self.comment
         self.person
+
 class Admin:
     def edit_comment():
         pass
