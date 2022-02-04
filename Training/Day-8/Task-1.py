@@ -1,7 +1,7 @@
 class Person:
     def __init__(self,name) -> None:
         self.name=name
-        print(f"{self.name} object Created")
+        # print(f"{self.name} object Created")
 
     def get_info(self):
         print(f'person name:{self.name}\n-----------------------------')
@@ -106,7 +106,7 @@ class Brick:
 
     
     def get_info(self):
-        print(f"Brick color: {self.color}\nDelicated to:{self.delicated.name}\nmessage:{self.message}\n-----------------------------")
+        print(f"Brick color: {self.color}\nDelicated to: {self.delicated.name}\nmessage: {self.message}\n-----------------------------")
 
 
 harsh=Person('Harsh')
